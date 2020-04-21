@@ -15,10 +15,14 @@ button.addEventListener('click', () => {
    console.log(time);
 
     if (time > 0) {
-        setInterval(() => {
+        let interval = setInterval(() => {
             if(time > 0){
                 time--;
                 zoneText.innerText = time;
+            } else {
+                alert('le decompte est terminé');
+                clearInterval(interval);
+                zoneText.innerText = 'vous pouvez recommencer :)';
             }
         }, 1000);
     } else {
